@@ -20,4 +20,38 @@ class PostController extends Controller
 
         return PostResource::collection($posts);
     }
+
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'title' => ['required'],
+            'metaTitle' => ['required'],
+            'metaDescription' => ['required'],
+            'description' => ['required'],
+            'category' => ['required'],
+        ]);
+
+
+        try {
+
+
+
+            Post::create([
+
+                'title' => $request->title,
+                'meta_title' => $request->metaTitle,
+                'meta_description' => $request->metaDescription,
+                'description' => $request->description,
+                'category_id' => $request->category,
+                'status' => $request->status
+            ]);
+
+            return response()->json(['success' => true]);
+
+        } catch (\Throwable $th) {
+            dd($th->getMessage());
+            return response()->json(['success' => false,'Oops Some Error Occured !']);
+        }
+    }
 }

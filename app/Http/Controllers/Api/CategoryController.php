@@ -23,4 +23,11 @@ class CategoryController extends Controller
 
         return CategoryResource::collection($categories);
     }
+
+    public function getCategories()
+    {
+        $categories = Category::all();
+
+        return CategoryResource::collection($categories);
+    }
 }

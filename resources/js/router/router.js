@@ -17,9 +17,18 @@
 import {createRouter, createWebHistory  } from "vue-router";
 
 //import the necessary pages required for routing
-import Navbar from '../components/pages/Navbar.vue'
-import Footer from '../components/pages/Footer.vue'
-import Hooks from '../components/pages/basics/Hooks.vue'
+//without lazy loading
+// import Navbar from '../components/pages/Navbar.vue'
+// import Footer from '../components/pages/Footer.vue'
+// import Hooks from '../components/pages/basics/Hooks.vue'
+
+//with lazy loading
+const Navbar = () => import('../components/pages/Navbar.vue')
+const Footer = () => import('../components/pages/Footer.vue')
+const Hooks = () => import('../components/pages/basics/Hooks.vue')
+
+const CreatePost = () => import('../components/pages/admin/posts/CreatePost.vue')
+const ListsPosts = () => import('../components/pages/admin/posts/ListPosts.vue')
 
 //mention your routes below
 /**
@@ -42,6 +51,21 @@ const routes = [
         name: 'Navbar',
         component: Navbar
     },
+
+    {
+        path: '/admin-create-post',
+        name: 'CreatePost',
+        component: () => import('../components/pages/admin/posts/CreatePost.vue')
+    },
+
+    {
+        path: '/admin-list-posts',
+        name: 'ListsPosts',
+        component: ListsPosts
+    },
+
+
+
 
     {
         path: '/footer',

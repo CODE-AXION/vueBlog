@@ -1,11 +1,14 @@
 <template>
     <div class="app">
 
+        <div>
+            <div class="flex h-screen bg-gray-200 font-roboto">
+                <SidebarVue />
 
-        <SidebarVue />
 
-        <h1>This is the home page</h1>
 
+            </div>
+        </div>
 
         <router-view />
     </div>

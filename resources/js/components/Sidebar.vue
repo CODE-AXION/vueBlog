@@ -14,9 +14,9 @@
             <h3>Menu</h3>
 
             <div class="menu">
-                <router-link class="button" to="/">
+                <router-link class="button" to="/admin-create-post">
                     <span class="material-icons">home</span>
-                    <span class="text">Home</span>
+                    <span class="text">Create Post</span>
 
                 </router-link>
 
@@ -25,6 +25,14 @@
                     <span class="text">Footer</span>
 
                 </router-link>
+
+                <router-link class="button" to="/admin-list-posts">
+                    <span class="material-icons">home</span>
+                    <span class="text">List Posts</span>
+
+                </router-link>
+
+
             </div>
 
             <div class="flex"></div>
