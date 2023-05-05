@@ -2,11 +2,8 @@
     <div class="app">
 
         <div>
-            <div class="flex h-screen bg-gray-200 font-roboto">
+            <div class="flex  h-screen bg-gray-200 font-roboto">
                 <SidebarVue />
-
-
-
             </div>
         </div>
 

@@ -23,4 +23,10 @@ Route::get('/categories',[CategoryController::class,'index']);
 Route::get('/posts',[PostController::class,'index']);
 
 Route::post('/store-post',[PostController::class,'store']);
-Route::get('/get/categories',[CategoryController::class,'getCategories']);
+Route::get('/get/categories',[CategoryController::class,'getCategories'])->name('all.categories');
+
+Route::get('/get/posts',[PostController::class,'getPosts'])->name('all.posts');
+
+Route::delete('/delete/posts/{id}',[PostController::class,'deletePosts'])->name('delete.post');
+
+

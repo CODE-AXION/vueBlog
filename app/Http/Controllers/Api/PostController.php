@@ -21,6 +21,20 @@ class PostController extends Controller
         return PostResource::collection($posts);
     }
 
+    public function getPosts()
+    {
+        $posts = Post::with('category')->get();
+
+        return PostResource::collection($posts);
+    }
+
+    public function deletePosts($id)
+    {
+        $post = Post::find($id)->first()->delete();
+
+        return response()->json(['message' => 'Post Deleted Successfully','success' => true]);
+    }
+
     public function store(Request $request)
     {
 
@@ -35,8 +49,6 @@ class PostController extends Controller
 
         try {
 
-
-
             Post::create([
 
                 'title' => $request->title,
@@ -50,7 +62,7 @@ class PostController extends Controller
             return response()->json(['success' => true]);
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+
             return response()->json(['success' => false,'Oops Some Error Occured !']);
         }
     }

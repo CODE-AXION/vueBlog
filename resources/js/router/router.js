@@ -47,7 +47,7 @@ const routes = [
     },
 
     {
-        path: '/filter',
+        path: '/filter', 
         name: 'Navbar',
         component: Navbar
     },

@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
-        // dump($request->category_id['filterCategories']);
+
         $categories = Category::withCount(['posts' => function($query)
         {
             $query->when(count(request()->input('category_id',[])),function($query)

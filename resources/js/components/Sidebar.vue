@@ -92,6 +92,9 @@ aside {
 	width: calc(2rem + 2rem);
 	overflow: hidden;
 	min-height: 100vh;
+    position:fixed;
+    z-index: 99;
+
 	padding: 1rem;
 	transition: 0.2s ease-in-out;
 
